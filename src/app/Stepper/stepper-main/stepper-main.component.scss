@@ -1,0 +1,114 @@
+.wrapper-progressBar {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.progressBar {
+  counter-reset: step;
+  padding-right: 20px;
+}
+
+.progressBar li {
+  list-style-type: none;
+  float: left;
+  position: sticky;
+  text-align: center;
+  color: #e61d12 !important;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.progressBar li:before {
+  cursor: pointer !important;
+  content: counter(step);
+  counter-increment: step;
+  line-height: 30px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #f44336;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px;
+  background-color: #f44336;
+  color: white;
+  font-size: medium;
+}
+
+.progressBar li:after {
+  content: "";
+  position: absolute;
+  margin-top: 10px;
+  width: 100%;
+  height: 8px;
+  background-color: #f44336;
+  top: 12px;
+  left: -47%;
+  z-index: -1;
+}
+
+.progressBar li:first-child:after {
+  content: none;
+}
+
+.progressBar li.active {
+  color: orange;
+}
+
+.progressBar li.active:before {
+  color: white;
+  border-color: orange;
+  background-color: orange;
+}
+
+.progressBar li.active + li:after {
+  background-color: orange;
+}
+
+.progressBar li.inprogress {
+  color: #eb6b10;
+}
+
+.progressBar li.inprogress:before {
+  color: white;
+  border-color: #eb6b10;
+  background-color: #eb6b10;
+}
+
+.progressBar li.inprogress + li:after {
+  background-color: #eb6b10;
+}
+
+.progressBar li.completed {
+  color: #28a745 !important;
+}
+
+.progressBar li.completed:before {
+  color: white;
+  border-color: #28a745 !important;
+  background-color: #28a745 !important;
+}
+
+.progressBar li.completed + li:after {
+  background-color: #28a745 !important;
+}
+
+
+.progressBar li.unavailable {
+  color: #565857 !important;
+}
+
+.progressBar li.unavailable:before {
+  color: white;
+  border-color: #565857 !important;
+  background-color: #565857 !important;
+}
+
+.progressBar li.unavailable + li:after {
+  background-color: #565857 !important;
+}
+
+
+.divider {
+  margin-top: 2rem;
+}

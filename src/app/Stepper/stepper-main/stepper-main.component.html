@@ -1,0 +1,10 @@
+<div style="width: 99%;">
+    <div class="wrapper-progressBar">
+        <ul class="progressBar">
+            <li *ngFor="let stage of stages | orderBy: 'order'; let i = index" [style.width.%]="stageWidth"
+                [ngClass]="stage.class | lowercase" [ngStyle]="selectedIndex===stage.order? selectedItem: null"
+                (click)="onClickStage(stage)">{{stage.name}}
+            </li>
+        </ul>
+    </div>
+</div>
